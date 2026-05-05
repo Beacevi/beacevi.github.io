@@ -6,424 +6,106 @@
         <meta charset="utf-8">
     
          
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="author" content="Beatriz Ceballos">
-        <meta name="description" content="Curriculum">
+        <meta name =    "viewport"  content = "width=device-width, initial-scale=1.0">
+        <meta name =      "author"  content =                      "Beatriz Ceballos">
+        <meta name = "description"  content =                            "Portpholio">
 
-        <link href="media/photos/fabicom.jpg" rel="icon" type="image/x-icon">
+        <link href="media/photos/favicom.png" rel="icon" type="image/x-icon">
 
         <title> 
-            Beatriz Ceballos | Curriculum
+            Beatriz Ceballos
         </title>
 
-
-        <link href="CSS\style.css" rel="stylesheet" type="text/css">
+        
+        <link   href="CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="JS/theme.js"></script>
 
     </head>
 
     <body>
         <header>
-            <div id="introduction">
-                <div class="photo">
-                    <img src="media/photos/FotoPersonal2.jpg" alt="Beatriz Ceballos">
-                </div>
-                <div class="aboutMe">
+            <div id="presentation">
+                <div id="introduction">
                     <h1>
-                        Beatriz Ceballos Vidal
+                        Beatriz<br>Ceballos
                     </h1>
                     <p>
-                        Soy estudiante de tercer año en la carrera de Programación de Videojuegos en la Universidad de Diseño y Tecnología, con un promedio actual de 8.147.
-                        Obtuve una beca del 15%, la cual sigo manteniendo, gracias a la creación de un juego educativo diseñado para niños de 6 a 8 años con TDAH y dislexia.
-                        Además, soy la delegada de programación de mi curso.
+                        I hold a degree in Game Programming and Design from UDIT, 
+                        specializing in programming, and I am completing my studies with a 8.14 GPA.
                     </p>
-                    <div class="buttons">
-                        <a href="#moreAboutMe" >
-                            <button  class="slide">
-                                Más sobre mi
-                            </button>
-                        </a>
-                        <a href="#Proyects" >
-                            <button  class="slide">
-                                Proyectos
-                            </button>
-                        </a>
-                    </div>
+                </div>
 
+                <div id="more-about-me-section">
+                    <div>
+
+                        <div class = "about-me-header">
+                            <h4>
+                                More about me:
+                            </h4>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+                                <!-- Botón -->
+                                <label for="switch-label" class="switch-button__label">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class = "about-me-info">
+
+                            <div id="get-to-know-me">
+                                <button  class="icon" onclick="AboutMe()">
+                                    <div>
+                                    </div>
+                                    <h3>
+                                        Get to know me
+                                    </h3>
+                                </button>
+                            </div>
+
+                            <div id="my-work-history">
+                                <button  class="icon" onclick="goToWork()">
+                                    <div>
+                                    </div>
+                                    <h3>
+                                        My work history
+                                    </h3>
+                                </button>
+                            </div>
+
+                            <div id="contact-me">
+                                <a  class="icon" href="https://mail.google.com/mail/?view=cm&fs=1&to=beacevi@gmail.com" target="_blank">
+                                    <div>
+                                    </div>
+                                    <h3>
+                                        Contact me
+                                    </h3>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
         </header>
-        <div id="moreAboutMe">
-            <div class="Questions">
-                <h2>
-                    ¿Cómo soy?
-                </h2>
-                <p>
-                    Tengo una sólida habilidad para trabajar en equipo, lo que me permite colaborar eficazmente con personas de diferentes disciplinas y aportar al desarrollo de proyectos 
-                    conjuntos. Valoro el intercambio de ideas y la colaboración en entornos colectivos, ya que considero que las soluciones más innovadoras y efectivas surgen cuando se trabaja 
-                    en conjunto hacia un objetivo común. Además, soy una persona curiosa y proactiva, siempre en busca de nuevas oportunidades para aprender.
-                    Me apasiona adquirir nuevos conocimientos, desde técnicas innovadoras hasta metodologías emergentes, que me permitan seguir creciendo tanto a nivel personal como profesional.
-                </p>
+        <footer id="copy-right">
+            <div class="home-footer">
+                <h5>
+                    Beatriz Ceballos
+                </h5>
+                <a href="https://github.com/Beacevi" target="_blank">
+                     <div class="github-footer">
+                     </div>
+                </a>
+                <a href="https://www.linkedin.com/in/beatriz-ceballos-vidal-b4b560297/" target="_blank">
+                    <div class="linkedin-footer">
+                    </div>
+                </a>
             </div>
-            <div class="habilities">
-                <div class="personalInformation">
-                    <h2>
-                        Fecha de nacimiento:
-                    </h2>
-                    <p>
-                        16 de junio del 2004.
-                    </p>
-                    <h2>
-                        Formación académica:
-                    </h2>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - 2020-2022 · Bachillerato Tecnológico (IES Rey Pastor).
-                                </p> 
-                            </div>
-                        </li>
-                    </ul>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - 2022-Actual · Grado de Programación de Videojuegos (UDIT).
-                                </p> 
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="skills">
-                    <h2>
-                        Conocimientos:
-                    </h2>
-                    <p>
-                        - 2 años de C++, enfocado a POO y aplicaciones de consola.
-                    </p>
-                    <p>
-                        - 3 años de C#, enfocado a Unity.
-                    </p>
-                    <p>
-                        - 2 años de Diseño Web, HTML y CSS, actualmente empezando con JavaScript.
-                    </p>
-                    <p>
-                        - 2 años de Adove Ilustrator, Photoshop y Premiere.
-                    </p>
-                    <ul>
-                        <li> 
-                            <strong>
-                                Inglés
-                            </strong>
-                            <div class="Englishporcent">
-                                <span>
-                                    90%
-                                </span>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div id="Proyects">
-            <div class="Questions">
-                <h2>
-                    ¿Desde cuándo llevo haciendo proyectos?
-                </h2>
-                <p>
-                    Desde 2021, cuando desarrollé mi primer videojuego, he trabajado en un total de cinco proyectos completos, sin contar el que estoy desarrollando actualmente.
-                    A lo largo de estos años, cada proyecto ha representado una oportunidad para perfeccionar mis habilidades, explorar nuevas tecnologías y mejorar mi capacidad 
-                    para enfrentar desafíos técnicos y creativos en el desarrollo de videojuegos.
-                </p>
-            </div>
-            <div class="AllProyects">
-                <div class="VideogamesProyects">
-                    <h2>
-                        Videojuegos:
-                    </h2>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    -<a class="links">"Mindless"</a>(2024-), soy la lead programmer:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>Juego de sigilo en 3D.</p>
-                                <p> 
-                                    Este es mi primer proyecto en Unreal 5. Llevo un mes, de los seis que tenemos, programando el juego. Por ahora no puedo mostrar ninguna imagen, 
-                                    ya que lo que hay del proyecto es muy abstracto.
-                                </p>
-                            </div>
-                            <!-- <div class="photosProjects">
-                                <img width="640"   alt="Mindless">
-                            </div> -->
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links">"Pelotete"</a> (2024-), soy la lead Programer:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>El juego todavía está en desarrollo, pero se trata de un juego de golf en 2D.</p>
-                                <p>
-                                    Es un proyecto independiente que he desarrollado junto a dos amigos. Está hecho en Unity 2D, y en él he tenido la oportunidad de investigar las físicas del 
-                                    motor. Mi parte del desarrollo ya está terminada, pero al no haber lanzado el juego aún, no puedo mostrar nada. Tardé dos semanas en completar la programación.                                    
-                                </p>
-                            </div>
-                            <!-- <div class="photosProjects">
-                                <img width="640"   alt="Pelotete">
-                            </div> -->
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    -<a class="links">"Juego de Memoria"</a>(2024), hice el juego en su totalidad, programadora, diseñadora y artista:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>Juego de memoria.</p>
-                                <p> 
-                                    Fue un trabajo de clase que realicé de manera individual, y consistía en programar en Unity el clásico juego de cartas cuyo objetivo es encontrar todas 
-                                    las parejas de imágenes o símbolos que coincidan.
-                                    El arte lo diseñé en Adobe Illustrator, y el juego lo desarrollé en el motor Unity.
-                                    Tardé dos semanas en hacer el arte y definir la estética del juego, y una semana en programarlo.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/Memory_game.png" alt="Juego de Memoria">
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://vellisca-studios.itch.io/rita-la-abuelita" target="_blank"> "Rita La Abuelita"</a> (2023 - 2024), fui la lead Programer y diseñadora:
-                                </p> 
-                                <pre>
-
-                                </pre>
-                                <p>Juego narrativo de minipuzzles 2D.</p>
-                                <p>
-                                    Este fue mi primer proyecto como programadora. Éramos cinco personas en el equipo de Vellisca Studios: una diseñadora, dos artistas y dos programadores.
-                                    El juego fue realizado en Unity. Debido a la cantidad de diseño que había, comencé a ayudar en el diseño del juego. Como consistía en minijuegos, acordé con 
-                                    la diseñadora principal que yo diseñaría los juegos que me tocara programar (el juego tipo test y el juego de cortar alimentos).
-                                    Además, también me encargué de programar la interfaz de usuario (UI) y de implementar el arte. Tuvimos seis meses para completar el juego.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <video width="640" height="360" controls>
-                                    <source src="media/videos/Rita_la_abuelita.mp4" type="video/mp4">
-                                    <source src="media/videos/Rita_la_abuelita.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links">"Doungeon Heroes"</a> (2023), fui artista:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>Juego RPG estilo pixelart.</p>
-                                <p>
-                                    Fue un juego realizado con otros cuatro compañeros de la universidad, en el que éramos dos programadores, dos artistas y un diseñador.
-                                    En un principio, iba a ser programadora, pero debido a la cantidad de arte que había y al poco tiempo del que disponíamos, también tuve que encargarme 
-                                    del arte (tuvimos de 1 a 2 meses para hacerlo). 
-                                    Fue el primer juego que desarrollé en el motor Unity, donde me encargué de la implementación completa del arte y de realizar animaciones en el motor.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/DungeonHeroes.png" alt="Doungeon Heroes">
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://ryutzii.itch.io/chiaki" target="_blank"> "Chiaky"</a> (2022), fui la lead designer:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>Juego narrativo de puzzles 2D, para aprender japonés.</p>
-                                <p>
-                                    Fue el primer juego que hice para la carrera. Éramos cinco personas, de las cuales tres fueron artistas, una fue programadora, otra se encargó del "papeleo" 
-                                    y yo me encargué del diseño de niveles y del juego en general. El juego se realizó en el motor Construct 3.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <video width="640" height="360" controls>
-                                    <source src="media/videos/Chiaky.mp4" type="video/mp4">
-                                    <source src="media/videos/Chiaky.webm" type="video/webm">
-                                </video>
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://beacevi.itch.io/9salas" target="_blank"> "9 salas"</a> (2021), mi primer juego, fuí artista y diseñadora:
-                                </p> 
-                                <pre>
-                                    
-                                </pre>
-                                <p>Juego narrativo de puzzles en estilo pixelart.</p>
-                                <p>
-                                    Fue destinado a la Jam del campamento de videojuegos de UDIT, en verano de 2021. El juego está hecho en el motor de videojuegos Construct 3, y el arte es 
-                                    completamente en pixel art. Mi aportación al proyecto fue el entorno y el personaje del fantasma. Éramos un equipo de tres personas y tuvimos dos semanas 
-                                    para realizarlo.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/9salas.png" alt="9 salas">
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <pre>
-                                    
-                </pre>
-                <div class="OthersProyects">
-                    <h2>
-                        Otros proyectos:
-                    </h2>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://www.linkedin.com/feed/update/urn:li:activity:7141864895498665984/" target="_blank">Modelado 3D</a> de un food truck:
-                                </p> 
-                            </div>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/FoodTruck.jpeg" alt="Doungeon Heroes">
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://github.com/Beacevi/WebRitaLaAbuelita.git" target="_blank">Pagina Web de "Rita La Abuelita"</a>
-                            </div>
-                            <pre>
-
-                            </pre>
-                            <p>Pagina Web.</p>
-                            <p>
-                                Fui la encargada de mi equipo de hacer la página web del juego, 
-                                <a class="links" href="https://vellisca-studios.itch.io/rita-la-abuelita" target="_blank">"Rita La Abuelita"</a>.
-                                Empecé haciendo el diseño en 
-                                <a class="links" href="https://www.figma.com/design/Zd0Tu9nIqedMw8JGtoFCDv/PROTOTIPADO-FIGMA-WEB-RITA-LA-ABUELITA?node-id=0-1&m=dev&t=oxk6bMSdQqXmKSd7-1" target="_blank">Figma</a> 
-                                en su totalidad. En cuanto a la programación de la web, me encargué de ella completamente (incluyendo hacerla responsive), excepto en el apartado de la galería. 
-                                Tuve dos semanas para hacer todo y tuve que coordinarlo con las últimas semanas del proyecto.
-                            </p>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/FigmaRita.png" alt="Doungeon Heroes">
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                    <ul>
-                        <li>
-                            <div>
-                                <p>
-                                    - <a class="links" href="https://youtu.be/SWu_18hrbZo" target="_blank"> "Dolor Eterno"</a> (2023), fui la directora y guionista:
-                                </p> 
-                                <pre>
-
-                                </pre>
-                                <p>Corto audiovisual.</p>
-                                <p>
-                                    En el corto, que tiene una duración breve pero intensa, intento expresar el profundo sentimiento de dolor y nostalgia que experimenta una hermana 
-                                    tras la pérdida de su hermana. A través de tres planos, que se presentan de manera silenciosa y sin diálogo, se narra este proceso emocional.
-                                </p>
-                            </div>
-                            <div class="photosProjects">
-                                <img width="640"  src="media/photos/DolorEterno.PNG" alt="Dolor Eterno">
-                            </div>
-                        </li>
-                    </ul>
-                    <pre>
-                                    
-                    </pre>
-                </div>
-            </div>
-        </div>
+            <h5>
+                © 2026
+            </h5>
+        </footer>
     </body>
-    <footer>
-        <div class="cantactMe">
-            <h3>
-                Contactos
-            </h3>
-        </div>
-        <div id="Contact">
-            <div id="socialMedia">
-                <div class="eMail">
-                    <p>eMail:</p>
-                </div>
-                <div class="LinkedIn">
-                    <p>LinkedIn:</p>
-                </div>
-                <div class="phoneNumber">
-                    <p>Télefono:</p>
-                </div>
-            </div>
-            <div id="socialMedia">
-                <div class="eMail">
-                    <a href="mailto:beacevi@gmail.com" target="_blank"><p>beacevi@gmail.com</p></a>
-                </div>
-                <div class="LinkedIn">
-                    <a href="https://www.linkedin.com/in/beatriz-ceballos-vidal-b4b560297/?originalSubdomain=es" target="_blank"><p>Beatriz Ceballos Vidal</p></a>
-                </div>
-                <div class="phoneNumber">
-                    <a href="tel:+34 683 51 21 06" target="_blank"><p>(+34)683 51 21 06</p></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
 </html>

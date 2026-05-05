@@ -1,476 +1,912 @@
+@font-face
+{
+  font-family : 'Italiana';
+  src         : url('../media/fonts/Italiana-Regular.ttf') format('truetype');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face
+{
+  font-family : 'Gilda Display';
+  src         : url('../media/fonts/GildaDisplay-Regular.ttf') format('truetype');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face
+{
+  font-family : 'Cutive Mono';
+  src         : url('../media/fonts/CutiveMono-Regular.ttf') format('truetype');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face
+{
+  font-family : 'Estedad Bold';
+  src         : url('../media/fonts/Estedad-Bold.ttf') format('truetype');
+  font-weight : normal;
+  font-style  : normal;
+}
+
+@font-face
+{
+  font-family : 'Estedad Medium';
+  src         : url('../media/fonts/Estedad-Medium.ttf') format('truetype');
+  font-weight : normal;
+  font-style  : normal;
+}
+
 *
 {
-    margin: 0;
-    padding: 0;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin  : 0;
+    padding : 0;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-p
+:root 
 {
-    font-size: 1.5rem;
+    --color-hover-light  : #FFFFFF;
+    --color-main-light   : #EFEFEF;
+    --color-second-light : #D9D9D9;
+    --color-red-light    : #C85050;
+
+    --color-hover-dark  : #000000;
+    --color-main-dark   : #101010;
+    --color-second-dark : #262626;
+    --color-red-dark    : #8B1A1A;
+
+    --time   : .3s;
+    --margin : 7rem;
+
+    --me-photo : url("../media/photos/merectagle.png");
+
+    /* Variables activas (modo claro por defecto) */
+    --ui-border          : var(--color-main-dark   );
+    --ui-knob            : var(--color-main-light  );
+    --ui-background      : var(--color-second-light);
+    --ui-copyright       : var(--color-red-dark    );
+    --ui-hover           : var(--color-hover-dark  );
+    --ui-secondary-hover : var(--color-hover-light );
+
+    --icon-theme           : url("../media/photos/day/moon.png"               );
+    --icon-get-to-know-me  : url("../media/photos/day/get-to-know-me-icon.png");
+    --icon-my-work-history : url("../media/photos/day/my-work-icon.png"       );
+    --icon-contact-me      : url("../media/photos/day/contact-me-icon.png"    );
+    --icon-github          : url("../media/photos/day/github-icon.png"        );
+    --icon-linkedin        : url("../media/photos/day/linkedin-icon.png"      );
+    --icon-date            : url("../media/photos/day/date-icon.png"          );
+    --icon-my-role         : url("../media/photos/day/my-role-icon.png"       );
+    --icon-link            : url("../media/photos/day/link-icon.png"          );
+    --icon-project-link    : url("../media/photos/day/project-link-icon.png"  );
+    --unreal-icon          : url("../media/photos/day/unreal-icon.png"        );
+    --unity-icon           : url("../media/photos/day/unity-icon.png"         );
+}
+body.dark-mode 
+{
+    --ui-border          : var(--color-main-light  );
+    --ui-knob            : var(--color-main-dark   );
+    --ui-background      : var(--color-second-dark );
+    --ui-copyright       : var(--color-red-light   );
+    --ui-hover           : var(--color-hover-light );
+    --ui-secondary-hover : var(--color-hover-dark  );
+
+    --icon-theme           : url("../media/photos/night/sun.png"                 );
+    --icon-get-to-know-me  : url("../media/photos/night/get-to-know-me-icon.png" );
+    --icon-my-work-history : url("../media/photos/night/my-work-history-icon.png");
+    --icon-contact-me      : url("../media/photos/night/contact-me-icon.png"     );
+    --icon-github          : url("../media/photos/night/github-icon.png"         );
+    --icon-linkedin        : url("../media/photos/night/linkedin-icon.png"       );
+    --icon-date            : url("../media/photos/night/date-icon.png"           );
+    --icon-my-role         : url("../media/photos/night/my-role-icon.png"        );
+    --icon-link            : url("../media/photos/night/link-icon.png"           );
+    --icon-project-link    : url("../media/photos/night/project-link-icon.png"   );
+    --unreal-icon          : url("../media/photos/night/unreal-icon.png"         );
+    --unity-icon           : url("../media/photos/night/unity-icon.png"          );
 }
 
-#introduction
+html, body 
+{
+    height: 100%;
+    overflow: hidden;
+}
+body.scroll-page 
+{
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+body.scroll-page  header
 {
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    width: 100%;
+    
+    flex-direction  : column;
+    gap             : calc(var(--margin) * 2);
 }
-.buttons
+body 
 {
-    display: flex;
-    flex-direction: column;
+    min-height : 100svh; 
+
+    background-color : var(--ui-background);
+
+    transition : 
+        background-color var(--time),
+        color            var(--time);
 }
-.photo img
+header
 {
-    width: 50vw;
-}
-.aboutMe
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 3vw;
-}
-.aboutMe h1
-{
-    font-size: 5rem;
-    margin-bottom: 5vh;
-    margin-top: 5vh;
-}
-button 
-{
-    background: none;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin-top: 5vh;
-    padding: 1em 1em;
-    width: 14vw;
-    color: var(--color);
-    -webkit-transition: 0.25s;
-    transition: 0.25s;
-    font-size: 1.5rem;
-    border-radius: 5%;
-}
-button:hover, button:focus 
-{
-    border-color: var(--hover);
-    color: #fff;
-}
-.slide
-{
-    --color: #313131;
-    --hover: #313131;
-}
-.slide:hover, .slide:focus
-{
-    box-shadow: inset 14vw 0 0 0 var(--hover);
+    min-height : 100svh; 
+    padding    : var(--margin);
+
+    display : flex;
 }
 
-#moreAboutMe
+h1 
 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-top: 10vh;
-    margin-bottom: 7vh;
-}
-.Questions
-{
-    text-align: center;
-    padding-left: 6vw;
-    padding-right: 6vw;
+    color : var(--ui-border);
+
+    font-size   : clamp(4rem, 11vw, 11rem);
+    font-weight : normal;
+    font-family : 'Gilda Display', serif;
 }
 h2
 {
-    margin-bottom: 1vh;
-    margin-top:1vh;
-}
-.habilities
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding-left: 6vw;
-    padding-right: 6vw;
-    margin-top: 8vh;
-}
-.personalInformation > p
-{
-    margin-left: 0.5vw;
-}
-.personalInformation ul
-{
-    list-style: none;
-    margin-left: 0.5vw;
-}
-.skills > p
-{
-    margin-left: 0.5vw;
-}
-.skills ul
-{
-    list-style: none;
-    margin-top: 7vh;
-    margin-left: 0.5vw;
-}
-.skills ul li
-{
-    height: .6rem;
-    background: #a1a1a1;
-    width: 100%;
-    margin-bottom: 6rem;
-    padding: 0;
-    position: relative;
-}
-.skills ul li strong
-{
-    position: absolute;
-    left: 0;
-    top: -3rem;
-    color: #000000;
-    font-size: 1.3rem;
-    line-height: 2.4rem;
-}
-.skills ul li .Englishporcent
-{
-    width: 90%;
-    background: #313131;
-    position: relative;
-    height: 100%;
-}
-.Englishporcent span
-{
-    position: absolute;
-    right: 0;
-    top: -2.6rem;
-    display: block;
-    color: white;
-    font-size: 1.1rem;
-    line-height: 1;
-    background: #313131;
-    padding: .6rem .6rem;
-    border-radius: 3px;
-}
+    color : var(--ui-border);
 
-#Proyects
-{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    margin-bottom: 7vh;
+    font-size   : 2.6vw;
+    font-family : 'Estedad Medium', serif;
+    font-weight : normal;
 }
-.AllProyects
+p
 {
-    display: flex;
-    flex-direction:column;
-    justify-content: space-around;
-    margin-top: 8vh;
-    margin-left: 6vw;
-    margin-right: 6vw;
-}
-.links
-{
-    text-decoration: underline;
-    color:#000000;
-}
-.VideogamesProyects > p
-{
-    margin-left: 0.5vw;
-}
-.VideogamesProyects ul
-{
-    list-style: none;
-    margin-left: 0.5vw;
-}
-.OthersProyects > p
-{
-    margin-left: 0.5vw;
-}
-.OthersProyects ul
-{
-    list-style: none;
-    margin-left: 0.5vw;
-}
-.photosProjects
-{
-    text-align: center;
-    padding-left: 6vw;
-    padding-right: 6vw;
-    padding-top: 2vh;
-    padding-bottom: 2vh;
-}
+    color : var(--ui-border);
 
-footer
-{
-    background-color: #252525;
-    width:100%;
+    font-size  : clamp(1.125rem, 2.5vw, 2.5rem);
+    font-family: 'Gilda Display', serif;
+
+    text-align : justify;
 }
-.cantactMe
+h3 
 {
-    text-align: center;
-    text-decoration: white underline;
+   color : var(--ui-border);
+
+   font-size   :  clamp(1rem, 1.75vw, 2rem);
+   font-family : 'Gilda Display', serif;
+   font-weight : normal;
 }
-footer h3
+h4
 {
-    color:#fff;
-    font-size: 1.6rem;
-    padding-top: 3vh;
-    padding-bottom: 2vh;
+    color : var(--ui-border);
+
+    font-size   : 1.5vw;
+    font-family : 'Cutive Mono', sans-serif;
+    font-weight : normal;
 }
-footer p
+h5
 {
-    color:#fff;
-    font-size: 1.3rem;
+    font-family : 'Estedad Bold', sans-serif;
+    color: var(--ui-copyright);
+    font-weight : normal;
 }
-#Contact
+h6
 {
-    display: flex;
-    flex-direction: column;
-    padding-top: 3vh;
-    padding-bottom: 4%;
-}
-#socialMedia
-{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    padding-bottom: 2vh;
-}
-#socialMedia > div > a
-{
-    text-decoration: none;
+    color : var(--ui-border);
+
+    font-size   : clamp(2rem, 7vw, 7rem);
+    font-weight : normal;
+    font-family : 'Gilda Display', serif;
 }
 
 
-@media screen and (max-width:1384px)
+#presentation 
 {
-    p
+    display         : flex;
+    flex-direction  : row;
+    flex-wrap       : wrap;
+    align-items     : flex-end;
+}  
+    /* home*/
+    #introduction 
     {
-        font-size: 1rem;
+        width           : fit-content; 
+        max-width       : 50%; 
+        display         : flex;
+        flex-direction  : column;
+        justify-content : flex-end;
+        align-items     : flex-start;
     }
-    .aboutMe h1
-    {
-        font-size: 3rem;
-    }
-    button 
-    {
-        font-size: 1rem;
-    }
-    footer h3
-    {
-        font-size: 1.1rem;
-    }
-    footer p
-    {
-        font-size:1rem;
-    }
-    h2
-    {
-        font-size: 1.7rem;
-    }
-    .Englishporcent span
-    {
-        font-size:0.7rem;
-    }
-    .skills ul li strong
-    {
-        font-size: 1.7rem;
-    }
-    .habilities
-    {
-        margin-top: 7vh;
-    }
-    .AllProyects
-    {
-        margin-top: 7vh;
-    }
-    #moreAboutMe
-    {
-        margin-top: 8vh;
-    }
-    #Proyects
-    {
-        margin-bottom: 6vh;
-    }
+        #introduction h1
+        {
+            
+            display         : flex;
+            justify-content : flex-end;
+            font-size       : clamp(4rem, 13vw, 13rem); 
+            line-height     : 1; 
+            font-weight     : normal;
+            padding-bottom  : calc(var(--margin) / 2);
+        }
+        #introduction p
+        {
+            margin    : 0;
+            max-width : 100%;
+        }
+
+#project-intro p
+{
+    padding-top : var(--margin);
 }
-@media screen and (max-width:1022px)
+    #more-about-me-section
+    {
+        width           : 50%;
+        display         : flex;
+        flex-direction  : column;
+        align-items     : center;
+        gap             : calc(var(--margin) / 3);               
+        padding-left    : var(--margin);
+        justify-content : flex-start;
+    }
+        #more-about-me-section div
+        {
+            display         : flex;
+            flex-direction  : column;
+            align-items     : flex-start;
+            justify-content : flex-start;
+            gap             : calc(var(--margin) / 4);
+        }
+
+            #more-about-me-section div .about-me-header
+            {
+                display        : flex;
+                flex-direction : row;
+                align-items    : center;
+                gap            : calc(var(--margin) / 3);
+            }
+            #more-about-me-section div.about-me-info
+            {
+                margin-top     : 0;
+                display        : flex;
+                flex-direction : column;
+                gap            : calc(var(--margin) / 4);
+                
+            }
+
+    /* project*/
+    #project-sleeve 
+    {
+        width : 100%;
+    }
+    #project-sleeve img 
+    {
+        width   : 100%;
+        height  : auto;
+        display : block;
+    }
+      
+
+    #overview 
+    {
+        width           : 100%;
+        display         : flex;
+        flex-direction  : column;
+        gap             : calc(var(--margin) / 3);
+        padding-top     : var(--margin);
+        padding-bottom  : var(--margin);
+    }
+    #overview > div 
+    {
+        display         : flex;
+        justify-content : space-between;
+        gap             : calc(var(--margin) * 2);
+    }   
+        #overview-info
+        {
+            flex           : 2;
+            display        : flex;
+            flex-direction : column;
+            gap            : calc(var(--margin) / 2);
+        }
+            .overview-about,
+            .overview-my-role
+            {
+                display        : flex;
+                flex-direction : column;
+                gap            : calc(var(--margin) / 6);
+            }
+
+        .overview-links
+        {
+            flex           : 1;
+            display        : flex;
+            flex-direction : column;
+            gap            : calc(var(--margin) / 2);
+            align-items    : flex-end;
+        }
+            .project-link button 
+            {
+                display     : flex;
+                align-items : center;
+                gap         : 1rem;
+
+                padding : 0.8rem 2rem;
+
+                background-color : var(--ui-knob);
+                border           : 1px solid var(--ui-knob);
+                border-radius    : 100px;
+
+                cursor     : pointer;
+                transition : all var(--time) ease;
+            }
+            .project-link button:hover 
+            {
+                background-color: var(--ui-secondary-hover);
+            }
+            .project-link button div 
+            {
+                width  : 20px;
+                height : 20px;
+ 
+                background-image    : var(--icon-project-link);
+                background-size     : contain;
+                background-repeat   : no-repeat;
+                background-position : center;
+            } 
+            .platform-icon
+            {
+                width  : 35%;
+                height : 35%;
+
+                background-image    : var(--unity-icon);
+                background-size     : contain;
+                background-repeat   : no-repeat;
+                background-position : center;
+            }
+    #more-project-photos
+    {
+        width           : 100%;
+        display         : flex;
+        flex-direction  : column;
+        gap             : calc(var(--margin));
+    }
+        .project-photo-1
+        {
+            width   : 100%;
+            height  : auto;
+            display : block;
+        }
+        .project-photo-1 img
+        {
+            width   : 100%;
+            height  : auto;
+            display : block;
+        }
+
+    #see-other-project
+    {
+        width           : 100%;
+        display         : flex;
+        flex-direction  : row;
+        justify-content : space-between;
+    } 
+        #see-other-project a 
+        {
+            display     : flex;
+            align-items : center;
+            gap         : calc(var(--margin) / 6);
+
+            cursor     : pointer;
+            transition : color var(--time);
+        }
+        #see-other-project a div
+        {
+            width  : 20px;
+            height : 20px;
+            
+            background-image    : var(--icon-project-link);
+            background-size     : contain;
+            background-repeat   : no-repeat;
+            background-position : center;
+        }
+        .previous-project div
+        {
+            transform: rotate(180deg);
+        }
+        #see-other-project h4
+        {
+            position: relative;
+            margin: 0;
+        }
+        #see-other-project h4::after
+        {
+            content          : "";
+            position         : absolute;
+            left             : 55%;
+            bottom           : -1px;
+            
+            
+            width            : 0;
+            height           : 2px;
+
+            background-color : currentColor;
+            border-radius    : 3px;
+
+            transform        : translateX(-55%);
+            transition       : width var(--time) ease;
+        }
+
+        #see-other-project a:hover h4::after
+        {
+            width : 105%;
+        }
+        
+
+    /* work */
+    #about-my-work
+    {
+        width           : fit-content;
+        max-width       : 34%;
+        display         : flex;
+        flex-direction  : column;
+        justify-content : flex-start;
+        align-items     : flex-start;
+    }
+        .work-header
+        {
+            display         : flex;
+            flex-direction  : row;
+            align-items     : center;
+            gap             : calc(var(--margin) / 3);
+        }
+
+
+        #my-work
+        {
+            width           : 66%;
+            display         : flex;
+            flex-direction  : column; 
+            gap             : calc(var(--margin) / 4);   
+            padding-left    : calc(var(--margin) * 2);
+            align-self      : flex-start;
+        }
+
+
+        #my-work > div
+        {
+            transition: 
+               opacity    var(--time) ease,
+               transform  var(--time) ease,
+               max-height var(--time) ease,
+               margin     var(--time) ease;
+            overflow: hidden;
+            
+        }
+
+
+        #my-work button
+        {
+            background : none;
+            border     : none;
+            cursor     : pointer;
+            transition : color var(--time);
+        }
+            #my-work button h1
+            {
+                position : relative;
+                display  : inline-block;
+            }
+            #my-work button:hover h1
+            {
+                transform: skewX(-10deg);
+                
+                    transition: transform .5s;
+            }
+            #my-work button h1::after 
+            {
+                content  : "";
+                position : absolute;
+
+                left   : 50%;
+                bottom : -1px;
+
+                width  : 0;
+                height : 2px;
+
+                border-radius    : 3px;
+                background-color : currentColor;
+
+                transform  : translateX(-50%);
+                transition : width var(--time) ease;
+            }
+            
+            /* cerrado */
+            .projects 
+            { 
+                display        : flex; 
+                flex-direction : column; 
+                gap            : calc(var(--margin) / 6); 
+                align-items    : flex-start; 
+                padding-left   : calc(var(--margin) * 2); 
+                max-height     : 0;
+                overflow       : hidden;
+                transition     : max-height var(--time) ease;
+            } 
+                .projects button h1
+                { 
+                    transform: skewX(0deg); 
+                    transition: transform 5s;
+                }
+                .projects button h2 
+                { 
+                    position   : relative; 
+                    display    : inline-block; 
+                    font-size  : 0;
+                    transition : font-size var(--time) ease;
+                } 
+                .projects button h2::after 
+                {
+                    content  : "";
+                    position : absolute;
+
+                    left   : 50%;
+                    bottom : 0;
+
+                    width  : 0;
+                    height : 2px;
+
+                    border-radius    : 3px;
+                    background-color : currentColor;
+                    
+                    transform  : translateX(-50%);
+                    transition : width var(--time) ease;
+                } 
+                .projects button:hover h2::after 
+                { 
+                    width : 105%; 
+                }
+
+            /* abierto */
+            #my-work > div.active .projects
+            {
+                max-height : 500px;
+            }
+
+            /* Los H2 crecen */
+            #my-work > div.active .projects button h2
+            {
+                font-size  : 2vw;
+            }
+
+            /* Secciones NO activas desaparecen */
+            #my-work > div.inactive
+            {
+                opacity        : 0;
+                transform      : translateY(-20px);
+                pointer-events : none;
+
+                max-height : 0;
+                margin     : 0;
+            }
+        
+
+/* home */
+.icon div 
 {
-    p
-    {
-        font-size: .75rem;
-    }
-    .aboutMe h1
-    {
-        font-size: 2.5rem;
-    }
-    button 
-    {
-        font-size: .75rem;
-    }
-    footer h3
-    {
-        font-size: .8rem;
-        padding-top: 2vh;
-        padding-bottom: 1.5vh;
-    }
-    footer p
-    {
-        font-size:.6rem;
-    }
-    h2
-    {
-        font-size: 1rem;
-    }
-    .Englishporcent span
-    {
-        font-size: .75rem;
-    }
-    .skills ul li strong
-    {
-        font-size: 1rem;
-    }
-    .habilities
-    {
-        margin-top: 4vh;
-    }
-    .AllProyects
-    {
-        margin-top: 4vh;
-    }
-    #moreAboutMe
-    {
-        margin-top:6vh;
-    }
-    #Contact
-    {
-        padding-top: 2.5vh;
-    }
-    #Proyects
-    {
-        margin-bottom: 4vh;
-    }
-    #moreAboutMe
-    {
-        margin-top: 5vh;
-    }
+    width  : 35px;
+    height : 35px;
+
+    background-size     : 100%;
+    background-position : center;
+    background-repeat   : no-repeat;
+
+    border-radius    : 50%;
+    background-color : transparent;
+    transition       : 
+        filter           var(--time),
+        background-color var(--time);
 }
-@media screen and (max-width:848px)
+    #get-to-know-me .icon div 
+    {
+        background-image : var(--icon-get-to-know-me);
+    }
+
+    #my-work-history .icon div 
+    {
+        background-image : var(--icon-my-work-history);
+    }
+
+    #contact-me .icon div 
+    {
+        background-image : var(--icon-contact-me);
+    }
+    #date .icon div
+    {
+        background-image : var(--icon-date);
+    }
+    #my-role .icon div
+    {
+        background-image : var(--icon-my-role);
+    }
+    #link .icon div
+    {
+        background-image : var(--icon-link);
+    }
+
+.icon 
 {
-    #introduction
+    display     : flex;
+    align-items : center;
+    gap         : 0.6rem;
+
+    background : none;
+    border     : none;
+    cursor     : pointer;
+
+    transition : color var(--time);
+
+    text-decoration : none; 
+    color           : inherit;
+} 
+
+.icon:hover h3 
+{
+    color : var(--ui-hover);
+}
+
+.icon:hover div 
+{
+    filter           : brightness(0.6);
+    background-color : rgba(0, 0, 0, 0.08); 
+}
+
+.switch-button 
+{
+    display: inline-block;
+}
+.switch-button .switch-button__checkbox 
+{
+    display: none;
+}
+.switch-button .switch-button__label 
+{
+    background-color : var(--ui-knob);
+    width            : 4rem;
+    height           : 1.6rem;
+    border-radius    : 2rem;
+    display          : inline-block;
+    position         : relative;
+    transition       : background-color var(--time), border-color var(--time);
+}
+    .switch-button .switch-button__label:before 
     {
-        flex-direction: column-reverse;
+        cursor              : pointer;
+        transition          : var(--time);
+        display             : block;
+        position            : absolute;
+        width               : 1.7rem;
+        height              : 1.7rem;
+        top                 : -0.05rem;
+        background-color    : var(--ui-knob);
+        background-image    : var(--icon-theme);
+        background-repeat   : no-repeat;
+        background-position : center;
+        content             : '';
+        border-radius       : 50%;
+        box-shadow          : inset 0px 0px 0px 1px var(--ui-border);
     }
-    .photo
+    .switch-button .switch-button__checkbox:checked + .switch-button__label:before 
     {
-        text-align: center;
+        transform: translateX(2.25rem);
     }
-    .buttons
+
+
+
+/* footer*/
+#copy-right 
+{
+    margin-top   : var(--margin); 
+    margin-bottom: var(--margin); 
+
+    position : fixed;   
+
+    left : 0; 
+    top  : 0; 
+
+    width  : var(--margin); 
+    height : calc(100% - 2 * var(--margin));;  
+
+    display         : flex;
+    align-items     : center;   
+    flex-direction  : column; 
+    justify-content : space-between;
+}
+
+#copy-right h5 
+{
+    font-size    : 1.5svh;
+    word-spacing : 0.2em;
+
+    display     : flex;
+    align-items : center;  
+    flex-wrap   : nowrap;  
+
+    writing-mode : vertical-rl;
+    transform    : rotate(180deg);
+}
+
+
+
+    /* home */
+    .home-footer
     {
-        display: flex;
+        display         : flex;
+        align-items     : center;  
+        flex-direction  : column; 
+        justify-content : center; 
+        gap             : calc(var(--margin) / 7);
+    }
+        .home-footer div
+        {
+            width  : 25px;
+            height : 25px;
+
+            background-size     : 100%;
+            background-position : center;
+            background-repeat   : no-repeat;
+
+            border-radius    : 50%;
+            background-color : transparent;
+            transition       : 
+                filter           var(--time),
+                background-color var(--time);        
+        }
+
+            .home-footer .github-footer
+            {
+                
+                cursor           : pointer;
+                background-image : var(--icon-github);
+            }
+            .home-footer .linkedin-footer
+            {
+                cursor           : pointer;
+                background-image : var(--icon-linkedin);
+            }
+            
+
+    /* work */
+    .work-footer
+    {
+        background : none;
+        border     : none;
+        cursor     : pointer;
+
+        transition : color var(--time);
+    }
+        .work-footer h5 
+        {
+            position : relative;
+            display  : inline-block;
+        }
+
+        .work-footer h5::after 
+        {
+             content : "";
+            position : absolute;
+
+            left : -1px; 
+            top  : 50%;           
+            
+            width  : 2px;          
+            height : 0;     
+            
+            background-color : currentColor;
+            border-radius    : 3px;
+            
+            transform  : translateY(-50%);
+            transition : height var(--time) ease;
+        }
+        .work-footer:hover h5::after 
+        {
+            height : 105%;
+        }
+
+/*about*/
+
+.about-info {
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : wrap;
+    align-items    : flex-start;
+    gap            : 2rem;
+}
+    #about .work-header
+    {
+        margin-bottom : calc(var(--margin)/4);
+    }
+
+    .about-info p {
+        flex : 3;
+    }
+
+    #photo-of-me {
+        flex                : 1;
+        min-width           : 200px;
+        align-self          : stretch;
+        background-image    : var(--me-photo);
+        background-size     : contain;
+        background-position : center;
+        background-repeat   : no-repeat;
+        border-radius       : 8px;
+    }
+
+.skills-header 
+{
+    display        : flex;
+    flex-direction : column;
+    gap            : 0;
+}
+
+.skills-updated 
+{
+    margin-bottom : calc(var(--margin)/4);
+}
+
+.skills-grid {
+    display               : grid;
+    grid-template-columns : 1fr 1fr;
+    column-gap            : calc(var(--margin));
+    row-gap               : calc(var(--margin)/3);
+    margin-bottom         : calc(var(--margin)/4);
+}
+.capacities-list {
+    display         : flex;
+    flex-wrap       : nowrap;
+    gap             : 0.75rem;
+    width           : 100%;
+    justify-content : space-between;
+}
+.capacity-tag {
+    background-color : var(--ui-secondary-hover);
+    border-radius    : 999px;
+    padding          : 0.25rem 1.25rem;
+    display          : inline-flex;
+    align-items      : center;
+    justify-content  : center;
+    flex-grow        : 1;
+}
+
+.capacity-tag h3 {
+    margin : 0;
+}
+.overview-my-role p,
+.about-info p, #project-intro p,
+.overview-about p,
+.overview-my-role p {
+    font-size : clamp(1.2rem, 2vw, 2.2rem);
+}
+.skills-updated,
+.capacity-tag h3 {
+    font-size: clamp(0.9rem, 1.4vw, 1.8rem);
+}
+
+@media (max-width: 900px) {
+    #presentation 
+    {
+        flex-direction: column;
+    }
+
+    #introduction, #more-about-me-section 
+    {
+        width: 100%;
+    }
+
+    #overview > div {
+        flex-direction: column;
+    }
+
+    .overview-links {
         flex-direction: row;
-        justify-content:space-evenly;
-        padding-bottom: 2vh;
-    }
-    .habilities
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content:none;
-        margin-top: 3vh;
-    }
-    .AllProyects
-    {
-        display: flex;
-        flex-direction: column;
-        justify-content:none;
-        margin-top: 3vh;
-    }
-    #moreAboutMe
-    {
-        margin-top: 4vh;
-    }
-    .photosProjects img
-    {
-        width:50vw
-    }
-    .photosProjects video
-    {
-        width:50vw
-    }
-    #socialMedia
-    {
-        padding-bottom: 1vh;
-    }
-    #Contact
-    {
-        padding-top: 2vh;
-    }
-    #Proyects
-    {
-        margin-bottom: 3vh;
-    }
-}
-@media screen and (max-width:692px)
-{
-    p
-    {
-        font-size: .5rem;
-    }
-    .aboutMe h1
-    {
-        font-size: 1.5rem;
-    }
-    button 
-    {
-        font-size: .5rem;
-    }
-    footer h3
-    {
-        font-size: .6rem;
-        padding-top: 1.5vh;
-        padding-bottom: 1vh;
-    }
-    footer p
-    {
-        font-size:.5rem;
-    }
-    h2
-    {
-        font-size: .8rem;
-    }
-    .Englishporcent span
-    {
-        font-size: .5rem;
-    }
-    .skills ul li strong
-    {
-        font-size: .8rem;
-    }
-    .habilities
-    {
-        margin-top: 3vh;
-    }
-    .AllProyects
-    {
-        margin-top: 3vh;
-    }
-    #moreAboutMe
-    {
-        margin-top:4vh;
-    }
-    #socialMedia
-    {
-        padding-bottom: .5vh;
-    }
-    #Contact
-    {
-        padding-top: 1vh;
-    }
-    #Proyects
-    {
-        margin-bottom: 2vh;
+        align-items: center;
     }
 }

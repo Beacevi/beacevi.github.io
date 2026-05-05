@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+
+        <meta charset="utf-8">
+    
+         
+        <meta name =    "viewport"  content = "width=device-width, initial-scale=1.0">
+        <meta name =      "author"  content =                      "Beatriz Ceballos">
+        <meta name = "description"  content =                            "Portpholio">
+
+        <link href="media/photos/favicom.png" rel="icon" type="image/x-icon">
+
+        <title> 
+            Beatriz Ceballos | Project name
+        </title>
+
+        
+        <link   href="CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="JS/theme.js"></script>
+        <script src="JS/project.js"></script>
+
+    </head>
+    <body class="scroll-page">
+        <header>
+            <div id="presentation">
+                <div id="introduction">
+                    <h1 id="project-title">
+                        Cloud Wander
+                    </h1>
+                </div>
+                <div id="more-about-me-section">
+                    <div>
+
+                        <div class = "about-me-header">
+                            <h4>
+                                About the project:
+                            </h4>
+                            <div class="switch-button">
+                                <!-- Checkbox -->
+                                <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+                                <!-- Botón -->
+                                <label for="switch-label" class="switch-button__label">
+                                </label>
+                            </div>
+                        </div>
+                        
+                        <div class = "about-me-info">
+
+                            <div id="date">
+                                <button  class="icon">
+                                    <div>
+                                    </div>
+                                    <h3 id="project-date">
+                                        03/2026
+                                    </h3>
+                                </button>
+                            </div>
+
+                            <div id="my-role">
+                                <a class="icon" href="#my-role-destination" >
+                                    <div>
+                                    </div>
+                                    <h3>
+                                        My role
+                                    </h3>
+                                </a>
+                            </div>
+
+                            <div id="link">
+                                <button  class="icon">
+                                    <div>
+                                    </div>
+                                    <h3>
+                                        Link
+                                    </h3>
+                                </button>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div id = "project-intro">
+                    <p id="project-description">
+                        Lorem ipsum dolor sit amet consectetur adipiscing elit, primis et sem justo netus orci imperdiet, 
+                        aliquet tellus aliquam lacus est diam. 
+                    </p>
+                </div>
+            </div>
+            <div>
+                <div id="project-sleeve">
+                    <img id="project-image1" src="media/photos/rectangle.png" alt="Project Photo">
+                </div>
+            </div>
+            <div id = "overview">
+                <h6 id = "my-role-destination">
+                    Overview
+                </h6>
+                <div>
+                    <div id = "overview-info" >
+                        <div class="overview-about">
+                            <h2>
+                                About
+                            </h2>
+                            <p id="project-about">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit, primis et sem justo netus orci imperdiet, 
+                                aliquet tellus aliquam lacus est diam. 
+                            </p>
+                        </div>
+                        <div class="overview-my-role">
+                            <h2>
+                                My role
+                            </h2>
+                            <p id="project-my-role">
+                                Lorem ipsum dolor sit amet consectetur adipiscing elit, primis et sem justo netus orci imperdiet, 
+                                aliquet tellus aliquam lacus est diam. 
+                            </p>
+                        </div>
+                    </div>
+                    <div class = "overview-links">
+                        <div class = "project-link">
+                            <button>
+                                <h3>
+                                    Link
+                                </h3>
+                                <div>
+                                </div>
+                            </button>
+                        </div>
+                        <div class = "platform-icon">
+                        </div>
+
+                    </div>
+                    
+                </div>
+            </div>
+            <div id = "more-project-photos">
+                <div class = "project-photo-1">
+                    <img id="project-image2" src="media/photos/rectangle.png" alt="Project Photo">
+                </div>
+                <div class = "project-photo-1">
+                    <img id="project-image3" src="media/photos/rectangle.png" alt="Project Photo">
+                </div>
+            </div>
+            <div id="see-other-project">
+                <a class="previous-project" onclick="goToAdjacentProject('prev')">
+                    <div></div>
+                    <h4>previous project</h4>
+                </a>
+
+                <a class="next-project" onclick="goToAdjacentProject('next')">
+                    <h4>next project</h4>
+                    <div></div>
+                </a>
+            </div>
+        </header>
+        <footer id="copy-right">
+            <button class="work-footer" onclick="goToWork()">
+                <h5>
+                    Work - Beatriz Ceballos
+                </h5>
+            </button>
+            <h5>
+                © 2026
+            </h5>
+        </footer>
+    </body>
+</html>

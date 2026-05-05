@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+    <head>
+
+        <meta charset="utf-8">
+    
+         
+        <meta name =    "viewport"  content = "width=device-width, initial-scale=1.0">
+        <meta name =      "author"  content =                      "Beatriz Ceballos">
+        <meta name = "description"  content =                            "Portpholio">
+
+        <link href="media/photos/favicom.png" rel="icon" type="image/x-icon">
+
+        <title> 
+            Beatriz Ceballos | Work
+        </title>
+
+        
+        <link   href="CSS/style.css" rel="stylesheet" type="text/css">
+        <script src="JS/theme.js"></script>
+
+    </head>
+
+    <body>
+        <header>
+            <div id="presentation">
+                <div id="about-my-work">
+                    <div class = "work-header">
+                        <h2>
+                            Work
+                        </h2>
+                        <div class="switch-button">
+                            <input type="checkbox" name="switch-button" id="switch-label" class="switch-button__checkbox">
+                            <label for="switch-label" class="switch-button__label"></label>
+                        </div>
+                    </div>
+                    <p>
+                        Mostly personal projects, plus some academic work from university.
+                    </p>
+                </div>
+
+                <div id="my-work">
+                    <div id="Unreal-Engine-Proyects">
+                        <button>
+                            <h1>
+                                Unreal
+                            </h1>
+                        </button>
+                        <div class="projects"> 
+                            <button onclick="goToProject('gloria-noctis')">
+                                <h2>
+                                    Gloria Noctis
+                                </h2>  
+                            </button>
+                        </div>
+                    </div>
+
+                   <div id="Unity-Proyects">
+                        <button>
+                            <h1>
+                                Unity
+                            </h1>
+                        </button>
+                        <div class="projects"> 
+                            <button onclick="goToProject('cloud-wander')">
+                                <h2>
+                                    Cloud Wander
+                                </h2>  
+                            </button>
+                            <button onclick="goToProject('rita-abuelita')" >
+                                <h2>
+                                    Rita la Abuelita
+                                </h2>  
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="Other-Proyects">
+                        <button>
+                            <h1>
+                                Web
+                            </h1>
+                        </button>
+                        <div class="projects"> 
+                            <button onclick="goToProject('dolor-eterno')">
+                                <h2>
+                                    Dolor Eterno
+                                </h2>  
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <footer id="copy-right">
+            <button class="work-footer" onclick="goToHome()">
+                <h5>
+                    Home - Beatriz Ceballos
+                </h5>
+            </button>
+            <h5>
+                © 2026
+            </h5>
+        </footer>
+    </body>
+</html>
